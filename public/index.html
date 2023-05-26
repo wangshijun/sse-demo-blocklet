@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h2>Server Sent Events</h2>
+    <div id="result"></div>
+    <script>
+      const eventSource = new EventSource(window.location.origin + "/stream");
+      eventSource.onmessage = function (event) {
+        document.getElementById("result").innerHTML += event.data + "<br>";
+        document.getElementById("result").scrollIntoView();
+      };
+    </script>
+  </body>
+</html>

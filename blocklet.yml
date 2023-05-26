@@ -1,0 +1,43 @@
+name: server-sent-event
+description: Demo blocklet for server sent events
+group: dapp
+main: app/index.js
+author:
+  name: wangshijun
+specVersion: 1.2.8
+version: 1.0.0
+keywords: []
+files:
+  - blocklet.md
+  - public
+  - screenshots
+interfaces:
+  - type: web
+    name: publicUrl
+    path: /
+    prefix: '*'
+    port: BLOCKLET_PORT
+    protocol: http
+did: z2qa81esvpxZgEzorg2o5q4UJvx9rtsWhk2ra
+community: ''
+documentation: ''
+homepage: ''
+license: ''
+payment:
+  price: []
+  share: []
+timeout:
+  start: 60
+requirements:
+  server: '>=1.7.0'
+  os: '*'
+  cpu: '*'
+  nodejs: '*'
+environments: []
+capabilities:
+  clusterMode: false
+  component: true
+screenshots: []
+components: []
+scripts:
+  dev: npm run start
