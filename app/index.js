@@ -27,9 +27,24 @@ app.get('/stream', (req, res) => {
   }, 1000);
 
   res.on('close', function () {
+    console.log('response ended');
     clearInterval(timer)
   });
+
+  req.on('close', function () {
+    console.log('client closed');
+  });
 });
+
+app.get('/long-running', (req, res) => {
+  req.on('close', function () {
+    console.log('client closed');
+  });
+
+  setTimeout(() => {
+    res.send('You waited 20 seconds');
+  }, 20* 1000);
+})
 
 app.listen(port, () => {
   console.log(`Server Sent Events app listening at http://localhost:${port}`);
